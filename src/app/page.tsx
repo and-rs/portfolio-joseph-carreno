@@ -14,11 +14,6 @@ export default function Home() {
           </div>
         </div>
         <InfoGrid />
-        <InfoGrid />
-        <InfoGrid />
-        <InfoGrid />
-        <InfoGrid />
-        <InfoGrid />
       </div>
     </div>
   );
