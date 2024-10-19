@@ -1,4 +1,4 @@
-export default function InfoGrid() {
+export default function TextGrid() {
   return (
     <div className="grid max-w-[800px] grid-cols-4 gap-8 self-center">
       <span className="border-b-2 pb-2">
