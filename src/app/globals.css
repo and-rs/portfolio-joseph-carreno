@@ -2,26 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 224 54% 93%;
+    --foreground: 225 40% 6%;
+    --card: 224 54% 93%;
+    --card-foreground: 225 40% 6%;
+    --popover: 224 54% 93%;
+    --popover-foreground: 225 40% 6%;
+    --primary: 224 64% 26%;
+    --primary-foreground: 224 54% 93%;
+    --secondary: 224 76% 66%;
+    --secondary-foreground: 225 40% 6%;
+    --muted: 224 55% 20%;
+    --muted-foreground: 225 40% 70%;
+    --accent: 224 88% 41%;
+    --accent-foreground: 224 54% 93%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 225 40% 6%;
+    --border: 224 55% 20%;
+    --input: 224 55% 20%;
+    --ring: 224 88% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 54% 7%;
+    --foreground: 225 40% 94%;
+    --card: 224 54% 7%;
+    --card-foreground: 225 40% 94%;
+    --popover: 224 54% 7%;
+    --popover-foreground: 225 40% 94%;
+    --primary: 224 64% 74%;
+    --primary-foreground: 224 54% 7%;
+    --secondary: 224 76% 34%;
+    --secondary-foreground: 225 40% 94%;
+    --muted: 224 55% 80%;
+    --muted-foreground: 225 40% 94%;
+    --accent: 224 88% 59%;
+    --accent-foreground: 224 54% 7%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 226 41% 10%;
+    --border: 224 54% 60%;
+    --input: 224 55% 80%;
+    --ring: 224 88% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .background {
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='114' height='27' viewBox='0 0 76 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 18c-2.43-1.824-4-4.73-4-8 0-4.418-3.582-8-8-8H0V0h20c5.523 0 10 4.477 10 10 0 4.418 3.582 8 8 8h20c4.418 0 8-3.582 8-8 0-5.523 4.477-10 10-10v2c-4.418 0-8 3.582-8 8 0 3.27-1.57 6.176-4 8H32zM64 0c-1.67 1.256-3.748 2-6 2H38c-2.252 0-4.33-.744-6-2h32z' fill='%668aea' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
   }
 }
