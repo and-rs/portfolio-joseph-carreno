@@ -1,16 +1,15 @@
 import Image from "next/image";
 import { Separator } from "./ui/separator";
 import logo from "../../public/logo.png";
+import Container from "./ui/container";
 
 export default function Hero() {
   return (
-    <div className="background border-primary/20 flex flex-col justify-center border-b py-8">
-      <div className="mx-auto max-w-screen-lg px-8">
-        <HeroDescription />
-        <Separator className="my-8" />
-        <HeroQuote />
-      </div>
-    </div>
+    <Container className="background border-primary/20 border-b">
+      <HeroDescription />
+      <Separator className="my-8" />
+      <HeroQuote />
+    </Container>
   );
 }
 
