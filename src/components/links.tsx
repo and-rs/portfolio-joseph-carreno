@@ -8,7 +8,7 @@ type LinksProps = {
 export default function Links({ name, href }: LinksProps) {
   return (
     <Link href={href} className="self-center">
-      <span className="text-lg font-medium text-primary hover:border-y-2">
+      <span className="text-primary text-lg font-medium hover:border-y-2">
         {name}
       </span>
     </Link>

@@ -1,22 +1,15 @@
-import { MenuIcon } from "lucide-react";
-import Links from "./links";
+import Image from "next/image";
+import logo from "../../public/android-chrome-512x512.png";
 
 export default function Navbar() {
   return (
-    <nav className="fixed flex h-20 w-full px-8 backdrop-blur">
+    <nav className="border-primary/30 fixed z-50 flex h-20 w-full border-b-1 px-8 backdrop-blur-sm">
       <div className="flex w-full justify-between">
-        <div className="self-center text-start text-5xl font-medium tracking-tighter text-primary max-sm:text-xl">
-          Joseph Carreno
-        </div>
-
-        <div className="invisible flex justify-center gap-4">
-          <Links name="Home" href="#"></Links>
-          <Links name="Works" href="#"></Links>
-          <Links name="Contact" href="#"></Links>
-        </div>
-        <div className="hidden self-center">
-          <MenuIcon />
-        </div>
+        <Image
+          src={logo}
+          alt="logo"
+          className="aspect-square size-12 self-center"
+        />
       </div>
     </nav>
   );
