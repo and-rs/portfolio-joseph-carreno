@@ -20,10 +20,10 @@ function HeroDescription() {
         <span className="text-2xl font-medium">Joseph Carreno</span>
         <p className="text-2xl font-light">
           An <b>illustrator</b> and <b>artist</b> based in New York City,
-          specializing in brand design with strong expertise in the Adobe
+          specializing in brand design with strong expertise with the Adobe
           Creative Suite. Committed to continuous learning, I focus on
-          effectively communicating messages through their designs, ensuring
-          each connects with its audience.
+          effectively communicating messages through my designs, ensuring each
+          connects with its audience.
         </p>
       </div>
 
