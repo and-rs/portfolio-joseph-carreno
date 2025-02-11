@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import Container from "./ui/container";
-import ImageContainer from "./ui/image-container";
+import Container from "./ui/container"
+import ImageContainer from "./ui/image-container"
 
 export default function Gallery() {
   return (
@@ -12,5 +12,5 @@ export default function Gallery() {
         <ImageContainer className="row-span-2" src={`carreno_portfolio/${2}`} />
       </div>
     </Container>
-  );
+  )
 }

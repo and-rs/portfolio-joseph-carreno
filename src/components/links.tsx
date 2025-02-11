@@ -1,9 +1,9 @@
-import Link from "next/link";
+import Link from "next/link"
 
 type LinksProps = {
-  name: string;
-  href: string;
-};
+  name: string
+  href: string
+}
 
 export default function Links({ name, href }: LinksProps) {
   return (
@@ -12,5 +12,5 @@ export default function Links({ name, href }: LinksProps) {
         {name}
       </span>
     </Link>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import { CldImage } from "next-cloudinary";
+import { CldImage } from "next-cloudinary"
 
 interface props {
-  src: string;
-  className?: string;
+  src: string
+  className?: string
 }
 
 export default function ImageContainer({ src, className }: props) {
@@ -19,5 +19,5 @@ export default function ImageContainer({ src, className }: props) {
         fill
       />
     </div>
-  );
+  )
 }
