@@ -1,14 +1,13 @@
-import { Loader, MousePointerClick } from "lucide-react"
-import Image from "next/image"
+import { Loader, MousePointerClick, XIcon } from "lucide-react"
 import React from "react"
 import {
-  Credenza,
-  CredenzaContent,
-  CredenzaDescription,
-  CredenzaHeader,
-  CredenzaTitle,
-  CredenzaTrigger,
-} from "./credenza"
+  MorphingDialog,
+  MorphingDialogClose,
+  MorphingDialogContainer,
+  MorphingDialogContent,
+  MorphingDialogImage,
+  MorphingDialogTrigger,
+} from "./morphing-dialog"
 
 interface ImageGridProps {
   images: {
@@ -39,8 +38,8 @@ export const ImageGrid: React.FC<ImageGridProps> = ({
           <div key={index} className="relative aspect-square">
             {image.icon && (
               <>
-                <MousePointerClick className="absolute right-0 bottom-0 z-40 m-1 animate-ping stroke-[1.75] text-background/40" />
-                <MousePointerClick className="absolute right-0 bottom-0 z-50 m-1 stroke-[1.75] fill-background text-foreground" />
+                <MousePointerClick className="absolute right-0 bottom-0 z-30 m-1 animate-ping stroke-[1.75] text-background/40" />
+                <MousePointerClick className="absolute right-0 bottom-0 z-30 m-1 stroke-[1.75] fill-background text-foreground" />
               </>
             )}
             {image.src && <ImageCredenza alt={image.alt} src={image.src} />}
@@ -53,46 +52,51 @@ export const ImageGrid: React.FC<ImageGridProps> = ({
 
 function ImageCredenza({ alt, src }: { alt: string; src: string }) {
   return (
-    <Credenza>
-      <CredenzaTrigger asChild>
-        <div className="relative size-full">
-          <div className="flex absolute justify-center border-4 border-transparent animate-pulse bg-foreground/30 size-full">
-            <Loader className="self-center m-auto opacity-70 animate-spin size-10" />
+    <>
+      <MorphingDialog
+        transition={{
+          duration: 0.1,
+          ease: "easeIn",
+        }}
+      >
+        <MorphingDialogTrigger>
+          <div className="overflow-hidden relative shadow-xl aspect-square size-full">
+            <div className="flex absolute justify-center border-4 border-transparent animate-pulse bg-foreground/30 size-full">
+              <Loader className="self-center m-auto opacity-70 animate-spin size-10" />
+            </div>
+            <MorphingDialogImage
+              src={src}
+              alt={alt}
+              className="object-cover transition size-full brightness-95 hover:contrast-75"
+            />
           </div>
-          <Image
-            className="object-cover z-30 border-2 ring transition border-background ring-primary/30 brightness-95 hover:contrast-75 hover:ring-secondary"
-            sizes="(max-width: 768px) 50vw, 33vw"
-            draggable={false}
-            alt={alt}
-            src={src}
-            priority
-            fill
-          />
-        </div>
-      </CredenzaTrigger>
-      <CredenzaContent className="min-h-[80%]">
-        <CredenzaHeader className="sr-only">
-          <CredenzaTitle>Work Picture</CredenzaTitle>
-          <CredenzaDescription>
-            Illustration or artwork made by Joseph Carreno
-          </CredenzaDescription>
-        </CredenzaHeader>
-
-        <div className="relative">
-          <Image
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-contain"
-            draggable={false}
-            loading="lazy"
-            alt={alt}
-            src={src}
-            fill
-          />
-          <div className="flex absolute justify-center size-full -z-10">
-            <Loader className="self-center m-auto opacity-70 animate-spin size-10" />
-          </div>
-        </div>
-      </CredenzaContent>
-    </Credenza>
+        </MorphingDialogTrigger>
+        <MorphingDialogContainer>
+          <MorphingDialogContent className="relative">
+            <MorphingDialogImage
+              src={src}
+              alt={alt}
+              className="object-cover size-full max-w-[90vw] lg:h-[90vh]"
+            />
+          </MorphingDialogContent>
+          <MorphingDialogClose
+            className="fixed top-6 right-6 p-1 bg-white rounded-full h-fit w-fit"
+            variants={{
+              initial: { opacity: 0 },
+              animate: {
+                opacity: 1,
+                transition: { duration: 0.1, ease: "easeOut" },
+              },
+              exit: {
+                opacity: 0,
+                transition: { duration: 0, ease: "easeOut" },
+              },
+            }}
+          >
+            <XIcon className="w-5 h-5 text-zinc-500" />
+          </MorphingDialogClose>
+        </MorphingDialogContainer>
+      </MorphingDialog>
+    </>
   )
 }

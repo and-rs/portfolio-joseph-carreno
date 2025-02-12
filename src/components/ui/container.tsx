@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 interface props {
   children: ReactNode
   className?: string
-  id: string
+  id?: string
 }
 
 export default function Container({ children, className, id }: props) {

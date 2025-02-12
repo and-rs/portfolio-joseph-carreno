@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar"
 import type { Metadata } from "next"
 import { Archivo } from "next/font/google"
 import "./globals.css"
+import Footer from "@/components/footer"
 
 const font = Archivo({ subsets: ["latin"], display: "swap" })
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={font.className}>
         <Navbar />
         <div className="overflow-clip">{children}</div>
+        <Footer />
       </body>
     </html>
   )
