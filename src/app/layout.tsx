@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={font.className}>
         <Navbar />
-        <div className="pt-20">{children}</div>
+        <div className="overflow-clip">{children}</div>
       </body>
     </html>
   )

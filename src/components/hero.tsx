@@ -5,7 +5,7 @@ import Container from "./ui/container"
 
 export default function Hero() {
   return (
-    <Container className="border-b background border-primary/20">
+    <Container id="home" className="border-b background border-primary/20">
       <HeroDescription />
       <Separator className="my-8" />
       <HeroQuote />
@@ -15,7 +15,7 @@ export default function Hero() {
 
 function HeroDescription() {
   return (
-    <div className="flex flex-col-reverse gap-4 md:flex-row">
+    <div className="flex flex-col-reverse gap-4 pt-4 md:flex-row">
       <div className="flex flex-col justify-center self-center space-y-4">
         <span className="text-4xl font-medium">Joseph Carreno</span>
         <p className="text-2xl font-light">
@@ -28,7 +28,12 @@ function HeroDescription() {
       </div>
 
       <div className="self-center aspect-square size-64">
-        <Image src={logo} alt="spinning logo" className="animate-spin-slow" />
+        <Image
+          className="relative animate-spin-slow"
+          alt="spinning logo"
+          draggable={false}
+          src={logo}
+        />
       </div>
     </div>
   )
