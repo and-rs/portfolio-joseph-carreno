@@ -38,7 +38,7 @@ function HorizontalLayout({
   children: ReactNode
 }) {
   return (
-    <header className="fixed z-10 w-full h-20 border-primary/30 border-b-1 bg-background/70 backdrop-blur-3xl">
+    <header className="fixed z-50 w-full h-20 border-primary/30 border-b-1 bg-background/70 backdrop-blur-3xl">
       <nav className="flex flex-row justify-between px-8 mx-auto w-full max-w-screen-lg h-full">
         {children}
       </nav>
