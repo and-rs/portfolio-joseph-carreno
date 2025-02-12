@@ -61,7 +61,7 @@ export default function Gallery() {
         columns={2}
         images={[
           {
-            src: "https://res.cloudinary.com/dh9rajm0q/image/upload/q_auto:eco/carreno_portfolio/2",
+            src: "https://res.cloudinary.com/dh9rajm0q/image/upload/q_auto:eco/c_scale,h_1383,w_1000/carreno_portfolio/2",
             alt: "A painting with a wizard traversing a forest",
           },
           {
