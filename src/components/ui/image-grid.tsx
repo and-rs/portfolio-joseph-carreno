@@ -3,12 +3,11 @@ import Image from "next/image"
 import React from "react"
 import {
   Credenza,
-  CredenzaTrigger,
   CredenzaContent,
+  CredenzaDescription,
   CredenzaHeader,
   CredenzaTitle,
-  CredenzaDescription,
-  CredenzaBody,
+  CredenzaTrigger,
 } from "./credenza"
 
 interface ImageGridProps {
