@@ -25,7 +25,11 @@ export default function Navbar() {
 function LinkButton({ children, href }: { children: ReactNode; href: string }) {
   return (
     <Link href={href}>
-      <Button size={"sm"} variant={"link"} className="text-md">
+      <Button
+        size={"sm"}
+        variant={"default"}
+        className="px-2 leading-2 text-md bg-background h-fit"
+      >
         {children}
       </Button>
     </Link>
@@ -38,7 +42,7 @@ function HorizontalLayout({
   children: ReactNode
 }) {
   return (
-    <header className="fixed z-50 w-full h-20 border-primary/30 border-b-1 bg-background/70 backdrop-blur-3xl">
+    <header className="fixed z-40 w-full h-20 border-primary/30 border-b-1 bg-background/70 backdrop-blur-3xl">
       <nav className="flex flex-row justify-between px-8 mx-auto w-full max-w-screen-lg h-full">
         {children}
       </nav>

@@ -60,14 +60,14 @@ function ImageCredenza({ alt, src }: { alt: string; src: string }) {
         }}
       >
         <MorphingDialogTrigger>
-          <div className="overflow-hidden relative shadow-xl aspect-square size-full">
+          <div className="overflow-hidden relative rounded border shadow-xl border-border/50 aspect-square size-full">
             <div className="flex absolute justify-center border-4 border-transparent animate-pulse bg-foreground/30 size-full">
               <Loader className="self-center m-auto opacity-70 animate-spin size-10" />
             </div>
             <MorphingDialogImage
               src={src}
               alt={alt}
-              className="object-cover transition size-full brightness-95 hover:contrast-75"
+              className="object-cover rounded transition size-full brightness-95 hover:contrast-75"
             />
           </div>
         </MorphingDialogTrigger>
@@ -76,7 +76,7 @@ function ImageCredenza({ alt, src }: { alt: string; src: string }) {
             <MorphingDialogImage
               src={src}
               alt={alt}
-              className="object-cover size-full max-w-[90vw] lg:h-[90vh]"
+              className="object-cover rounded border size-full max-w-[90vw] border-border/50 lg:h-[90vh]"
             />
           </MorphingDialogContent>
           <MorphingDialogClose

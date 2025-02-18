@@ -45,7 +45,7 @@ function HeroQuote() {
       <span className="text-4xl font-medium tracking-tighter md:text-6xl">
         Art explores ideas; illustration communicates them.
       </span>
-      <div className="text-5xl font-medium tracking-tighter md:text-8xl text-secondary">
+      <div className="text-5xl font-medium tracking-tighter md:text-8xl text-primary">
         Concepts turned into visuals.
       </div>
     </>
