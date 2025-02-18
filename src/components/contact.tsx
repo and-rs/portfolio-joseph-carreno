@@ -1,29 +1,64 @@
 "use client"
 
+import { useState } from "react"
+import { Button } from "./ui/button"
 import Container from "./ui/container"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip"
+
+const email = "alexno3002@gmail.com"
 
 export default function Contact() {
-  const artistEmail = "alexno3002@gmail.com"
-
   return (
     <Container
       id="contact"
-      className="h-[600px] background border-y border-primary/20"
+      className="pb-10 h-[300px] background border-y border-primary/20"
     >
-      <div className="flex flex-col justify-items-center my-auto text-center">
-        <h2 className="mb-6 text-3xl font-bold">Get in Touch</h2>
-        <p className="mb-8 text-xl">
-          For inquiries, collaborations, or just to say hello:
+      <div className="space-y-6 text-center">
+        <h2 className="text-3xl font-bold">Get in Touch</h2>
+        <p className="text-xl">
+          For inquiries, collaborations, or just to say hello
         </p>
-        <div className="mb-8">
-          <a
-            href={`mailto:${artistEmail}`}
-            className="text-2xl font-medium hover:underline"
-          >
-            {artistEmail}
-          </a>
-        </div>
+
+        <TooltipProvider delayDuration={300}>
+          <TooltipEmail />
+        </TooltipProvider>
       </div>
     </Container>
+  )
+}
+
+function TooltipEmail() {
+  const [isCopied, setIsCopied] = useState(false)
+
+  const handleCopyClick = async () => {
+    try {
+      await navigator.clipboard.writeText(email)
+      setIsCopied(true)
+      setTimeout(() => setIsCopied(false), 2000)
+    } catch (err) {
+      console.error("Failed to copy email: ", err)
+    }
+  }
+
+  return (
+    <Tooltip open={isCopied}>
+      <TooltipTrigger asChild>
+        <Button
+          variant={"ghost"}
+          className="gap-2 text-xl"
+          onClick={handleCopyClick}
+        >
+          {email}
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>Copied!</p>
+      </TooltipContent>
+    </Tooltip>
   )
 }
