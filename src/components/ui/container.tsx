@@ -9,7 +9,7 @@ interface props {
 export default function Container({ children, className, id }: props) {
   return (
     <section id={id} className={`w-full ${className}`}>
-      <div className="p-8 pt-20 mx-auto max-w-screen-lg">{children}</div>
+      <div className="p-8 pt-20 mx-auto max-w-screen-lg h-full">{children}</div>
     </section>
   )
 }
